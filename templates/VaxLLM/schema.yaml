@@ -1,0 +1,286 @@
+id: https://example.com/BrucellaVaccineSchema
+name: BrucellaVaccineSchema
+description: "Schema for Brucella vaccine classification and annotation results"
+imports:
+  - "linkml:types"
+
+prefixes:
+  linkml: "https://w3id.org/linkml/"
+  VAX: "https://example.com/BrucellaVaccineSchema#"
+
+classes:
+  dh_interface:
+    name: dh_interface
+    description: "A DataHarmonizer interface"
+    from_schema: https://example.com/BrucellaVaccineSchema
+
+  BrucellaVaccineSchema:
+    name: BrucellaVaccineSchema
+    description: "Template for Brucella vaccine classification and annotation results"
+    is_a: dh_interface
+    slots:
+      - PMID
+      - Title
+      - Year
+      - Authors
+      - Vaccine Name
+      - Vaccine Introduction
+      - Vaccine Type
+      - Vaccine Antigen
+      - Vaccine Formulation
+      - Host Species Used as Laboratory Animal Model
+      - Experiment Used to investigate the vaccine
+      - Species
+      - Disease
+      - Vaccine Protocol
+      - Results
+      - Immune Response
+      - Efficacy
+      - Gene1
+      - Mapped GeneID1
+      - Gene2
+      - Mapped GeneID2
+      - Gene3
+      - Mapped GeneID3
+      - Gene4
+      - Mapped GeneID4
+      - Gene5
+      - Mapped GeneID5
+    slot_usage:
+      PMID:
+        description: "PubMed ID of the article"
+      Title:
+        description: "Title of the article"
+      Year:
+        description: "Publication year of the article"
+      Authors:
+        description: "Authors of the article"
+      Vaccine Name:
+        description: "Name of the vaccine"
+      Vaccine Introduction:
+        description: "Brief introduction of the vaccine"
+      Vaccine Type:
+        description: "Type of vaccine, vaccine platform"
+      Vaccine Antigen:
+        description: "Antigen used in the vaccine"
+      Vaccine Formulation:
+        description: "Formulation details of the vaccine, including adjuvants, proteins, etc."
+      Host Species Used as Laboratory Animal Model:
+        description: "Host species used in vaccine trials"
+      Experiment Used to investigate the vaccine:
+        description: "Experimental methods used for vaccine investigation"
+      Vaccine Protocol:
+        description: "Protocol details for the vaccine"
+      Results:
+        description: "Results of the vaccine study"
+      Immune Response:
+        description: "Immune response observed in the study"
+      Efficacy:
+        description: "Efficacy of the vaccine after challenge protocol"
+      Species:
+        description: "Species annotated by PubTator"
+      Disease:
+        description: "Disease identified in the study"
+      Gene1:
+        description: "Gene with ID if available"
+      Mapped GeneID1:
+        description: "Mapped Gene ID if available"
+      Gene2:
+        description: "Gene with ID if available"
+      Mapped GeneID2:
+        description: "Mapped Gene ID if available"
+      Gene3:
+        description: "Gene with ID if available"
+      Mapped GeneID3:
+        description: "Mapped Gene ID if available"
+      Gene4:
+        description: "Gene with ID if available"
+      Mapped GeneID4:
+        description: "Mapped Gene ID if available"
+      Gene5:
+        description: "Gene with ID if available"
+      Mapped GeneID5:
+        description: "Mapped Gene ID if available"
+      
+
+slots:
+  PMID:
+    description: "PubMed ID of the article"
+    required: true
+    range: string
+    slot_group: "Article Metadata"
+
+  Title:
+    description: "Title of the article"
+    required: true
+    range: string
+    slot_group: "Article Metadata"
+
+  Year:
+    description: "Publication year of the article"
+    required: true
+    range: string
+    slot_group: "Article Metadata"
+
+  Authors:
+    description: "Authors of the article"
+    range: string
+    slot_group: "Article Metadata"
+
+  Vaccine Name:
+    description: "Name of the vaccine"
+    range: string
+    slot_group: "Vaccine Information"
+
+
+  Vaccine Introduction:
+    description: "Brief introduction of the vaccine"
+    range: string
+    slot_group: "Vaccine Information"
+
+  Vaccine Type:
+    description: "Type of vaccine, also known as vaccine platform"
+    range: VaccineTypeEnum
+    slot_group: "Vaccine Information"
+
+
+  Vaccine Antigen:
+    description: "Antigen used in the vaccine"
+    range: string
+    slot_group: "Vaccine Information"
+
+
+
+  Vaccine Formulation:
+    description: "Formulation details of the vaccine, including adjuvants, proteins, etc."
+    range: string
+    slot_group: "Vaccine Information"
+
+  Host Species Used as Laboratory Animal Model:
+    description: "Host species used in vaccine trials"
+    range: string
+    slot_group: "Experiment Information"
+
+  Experiment Used to investigate the vaccine:
+    description: "Experimental methods used for vaccine investigation"
+    range: string
+    slot_group: "Experiment Information"
+
+  Vaccine Protocol:
+    description: "Protocol details for the vaccine"
+    range: string
+    slot_group: "Experiment Information"
+  
+  Results:
+    description: "Results of the vaccine study"
+    range: string
+    slot_group: "Experiment Information"
+
+  Immune Response:
+    description: "Immune response observed in the study"
+    range: string
+    slot_group: "Experiment Information"
+
+  Efficacy:
+    description: "Efficacy of the vaccine after challenge protocol"
+    range: string
+    slot_group: "Experiment Information"
+  
+
+  Species:
+    description: "Species annotated by PubTator"
+    range: string
+    slot_group: "Annotation Data"
+
+  Disease:
+    description: "Disease identified in the study"
+    range: string
+    slot_group: "Annotation Data"
+
+  Gene1:
+    description: "Gene with ID if available"
+    range: string
+    slot_group: "Annotation Data"
+
+  Gene type:
+    description: "Type of gene"
+    range: string
+    slot_group: "Annotation Data"
+
+  Mapped GeneID1:
+    description: "Mapped Gene ID if available"
+    range: string
+    slot_group: "Annotation Data"
+  Gene2:
+    description: "Gene with ID if available"
+    range: string
+    slot_group: "Annotation Data"
+  Mapped GeneID2:   
+    description: "Mapped Gene ID if available"
+    range: string
+    slot_group: "Annotation Data"
+  Gene3:
+    description: "Gene with ID if available"
+    range: string
+    slot_group: "Annotation Data"
+  Mapped GeneID3:
+    description: "Mapped Gene ID if available"
+    range: string
+    slot_group: "Annotation Data"
+  Gene4:
+    description: "Gene with ID if available"
+    range: string
+    slot_group: "Annotation Data"
+  Mapped GeneID4:
+    description: "Mapped Gene ID if available"
+    range: string
+    slot_group: "Annotation Data"
+  Gene5:
+    description: "Gene with ID if available"
+    range: string
+    slot_group: "Annotation Data"
+  Mapped GeneID5:
+    description: "Mapped Gene ID if available"
+    range: string
+    slot_group: "Annotation Data" 
+  
+  
+  
+
+enums:
+  VaccineTypeEnum:
+    name: VaccineTypeEnum
+    permissible_values:
+      RNA vaccine: 
+        text: RNA vaccine
+        meaning: VO_0000186
+      DNA vaccine:  
+        text: DNA vaccine
+        meaning: VO_0000032
+      subunit vaccine: 
+        text: subunit vaccine
+        meaning: VO_0000534
+      live attenuated vaccine: 
+        text: live attenuated vaccine
+        meaning: VO_0000367
+      inactivated vaccine: 
+        text: inactivated vaccine
+        meaning: VO_0000315
+      recombinant vector vaccine: 
+        text: recombinant vector vaccine
+        meaning: VO_0000484
+      virus-like particle vaccine:
+        text: virus-like particle vaccine
+        meaning: VO_0004914
+      toxoid vaccine: 
+        text: toxoid vaccine
+        meaning: VO_0000561
+      Other: {}
+
+types:
+  WhitespaceMinimizedString:
+    name: "WhitespaceMinimizedString"
+    typeof: string
+    description: "A string that has all whitespace trimmed off of beginning and end, and all internal whitespace segments reduced to single spaces."
+    base: str
+    uri: xsd:token
